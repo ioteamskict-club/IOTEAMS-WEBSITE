@@ -365,6 +365,134 @@
     }
 
     /* ══════════════════════════════════════
+       FEATURED PROJECTS
+    ══════════════════════════════════════ */
+    #projects {
+      background: var(--black);
+      padding: var(--space-3xl) var(--space-2xl);
+      border-top: 1px solid var(--border-gold);
+    }
+
+    .projects-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+    }
+
+    .project-card {
+      background: var(--black-2);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-gold);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .project-thumb {
+      position: relative;
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--black-3);
+    }
+
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-thumb .project-icon {
+      font-size: 2.5rem;
+      opacity: 0.85;
+    }
+
+    .project-card.hardware .project-thumb { background: radial-gradient(circle at 30% 30%, rgba(201,168,76,0.18), var(--black-3) 70%); }
+    .project-card.cloud    .project-thumb { background: radial-gradient(circle at 30% 30%, rgba(26,188,176,0.18), var(--black-3) 70%); }
+    .project-card.ai       .project-thumb { background: radial-gradient(circle at 30% 30%, rgba(64,224,208,0.18), var(--black-3) 70%); }
+
+    .project-track-badge {
+      position: absolute;
+      top: var(--space-sm);
+      left: var(--space-sm);
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      background: var(--black);
+      border: 1px solid;
+    }
+
+    .project-card.hardware .project-track-badge { color: var(--gold);      border-color: rgba(201,168,76,0.4); }
+    .project-card.cloud    .project-track-badge { color: var(--teal);      border-color: rgba(26,188,176,0.4); }
+    .project-card.ai       .project-track-badge { color: var(--turquoise); border-color: rgba(64,224,208,0.4); }
+
+    .project-body {
+      padding: var(--space-md);
+    }
+
+    .project-body h3 {
+      font-size: var(--fs-md);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+
+    .project-body p {
+      font-size: var(--fs-sm);
+      color: var(--white-dim);
+      line-height: 1.65;
+      margin-bottom: var(--space-sm);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .project-tags .skill-tag {
+      border-color: var(--border-dark);
+      color: var(--white-muted);
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--white-muted);
+      letter-spacing: 0.04em;
+      padding-top: var(--space-xs);
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .project-meta span { display: flex; align-items: center; gap: 0.3rem; }
+
+    .projects-cta {
+      text-align: center;
+      margin-top: var(--space-xl);
+    }
+
+    /* ══════════════════════════════════════
        LEARNING PATH
     ══════════════════════════════════════ */
     #learning-path {
@@ -512,11 +640,13 @@
       .path-steps         { grid-template-columns: 1fr 1fr; }
       .path-steps::before { display: none; }
       .tech-categories    { grid-template-columns: 1fr 1fr; }
+      .projects-grid      { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 576px) {
       .path-steps      { grid-template-columns: 1fr; }
       .tech-categories { grid-template-columns: 1fr; }
+      .projects-grid   { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -947,6 +1077,257 @@
           </div>
 
         </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section id="projects">
+      <div class="projects-inner">
+        <div class="section-header centered" data-aos="fade-up">
+          <span class="section-tag">◆ Built By Members</span>
+          <h2 class="section-title" style="margin:0 auto;">Featured Projects</h2>
+          <hr class="divider-gold">
+          <p class="section-subtitle" style="margin:0 auto; text-align:center;">
+            Eleven real IoT systems designed, built, and demoed by our members —
+            from prototype to working device.
+          </p>
+        </div>
+
+        <div class="projects-grid" data-aos="fade-up" data-aos-delay="100">
+
+          <!-- 1. Smart Door -->
+          <div class="project-card hardware">
+            <div class="project-thumb">
+              <span class="project-track-badge">Hardware</span>
+              <img src="../assets/img/projects/smart-door.jpg" alt="Smart Door — IoT security lock" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>Smart Door</h3>
+              <p>A five-method IoT door lock — key, key switch, touch switch, mobile app, and face recognition — communicating over MQTT for fast, reliable access.</p>
+              <div class="project-tags">
+                <span class="skill-tag">MQTT</span>
+                <span class="skill-tag">Face Recognition</span>
+                <span class="skill-tag">Mobile App</span>
+              </div>
+              <div class="project-meta">
+                <span><i class="bi bi-tag"></i> Access Control</span>
+                <span>01 / 11</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. AgriLink -->
+          <div class="project-card hardware">
+            <div class="project-thumb">
+              <span class="project-track-badge">Hardware</span>
+              <img src="../assets/img/projects/agrilink.png" alt="AgriLink — smart humidity management system" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>AgriLink</h3>
+              <p>An ESP32-based humidity management system for indoor farms that senses temperature, humidity, and soil moisture, automating misting via the Blynk app.</p>
+              <div class="project-tags">
+                <span class="skill-tag">ESP32</span>
+                <span class="skill-tag">DHT22</span>
+                <span class="skill-tag">Blynk</span>
+              </div>
+              <div class="project-meta">
+                <span><i class="bi bi-tag"></i> Smart Farming</span>
+                <span>02 / 11</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. RIOT -->
+          <div class="project-card ai">
+            <div class="project-thumb">
+              <span class="project-track-badge">AI</span>
+              <img src="../assets/img/projects/riot.png" alt="RIOT — Rehabilitation Internet of Things" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>RIOT</h3>
+              <p>Rehabilitation Internet of Things — a camera-based platform that guides stroke survivors through hand-gesture exercises and tracks their recovery remotely.</p>
+              <div class="project-tags">
+                <span class="skill-tag">Computer Vision</span>
+                <span class="skill-tag">Gesture Recognition</span>
+                <span class="skill-tag">Remote Monitoring</span>
+              </div>
+              <div class="project-meta">
+                <span><i class="bi bi-tag"></i> Health & Rehab</span>
+                <span>03 / 11</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Kibot -->
+          <div class="project-card ai">
+            <div class="project-thumb">
+              <span class="project-track-badge">AI</span>
+              <img src="../assets/img/projects/kibot.jpg" alt="Kibot — human-friendly facial recognition system" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>Kibot</h3>
+              <p>A human-friendly facial recognition system for access control that reads liveness, emotion, age, and gender in real time across shared facilities.</p>
+              <div class="project-tags">
+                <span class="skill-tag">Facial Recognition</span>
+                <span class="skill-tag">Liveness Detection</span>
+                <span class="skill-tag">IoT Integration</span>
+              </div>
+              <div class="project-meta">
+                <span><i class="bi bi-tag"></i> Access Control</span>
+                <span>04 / 11</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. NY HAB / AquaLink -->
+          <div class="project-card cloud">
+            <div class="project-thumb">
+              <span class="project-track-badge">Cloud</span>
+              <img src="../assets/img/projects/nyhab.png" alt="NY HAB — AquaLink water quality monitoring" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>NY HAB (AquaLink)</h3>
+              <p>A PETG-enclosed IoT sensor system that monitors aquaculture water quality in real time, enabling early detection of harmful algal blooms.</p>
+              <div class="project-tags">
+                <span class="skill-tag">Water Quality</span>
+                <span class="skill-tag">IoT Sensors</span>
+                <span class="skill-tag">Aquaculture</span>
+              </div>
+              <div class="project-meta">
+                <span><i class="bi bi-tag"></i> Aquaculture</span>
+                <span>05 / 11</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. CObot -->
+          <div class="project-card ai">
+            <div class="project-thumb">
+              <span class="project-track-badge">AI</span>
+              <img src="../assets/img/projects/cobot.png" alt="CObot — autonomous classroom attendance robot" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>CObot</h3>
+              <p>An autonomous mobile robot that navigates classrooms, recognizes students by face, and logs attendance automatically to Google Sheets.</p>
+              <div class="project-tags">
+                <span class="skill-tag">AI Robotics</span>
+                <span class="skill-tag">Facial Recognition</span>
+                <span class="skill-tag">Google Sheets</span>
+              </div>
+              <div class="project-meta">
+                <span><i class="bi bi-tag"></i> Campus Automation</span>
+                <span>06 / 11</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. IoT Plant Monitoring & Watering -->
+          <div class="project-card hardware">
+            <div class="project-thumb">
+              <span class="project-track-badge">Hardware</span>
+              <img src="../assets/img/projects/plant-monitoring.png" alt="IoT Plant Monitoring and Watering System" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>Plant Monitoring &amp; Watering System</h3>
+              <p>A NodeMCU ESP8266 system that reads soil moisture and triggers a relay-controlled pump automatically, with remote control via the Blynk app.</p>
+              <div class="project-tags">
+                <span class="skill-tag">ESP8266</span>
+                <span class="skill-tag">Soil Moisture</span>
+                <span class="skill-tag">Blynk</span>
+              </div>
+              <div class="project-meta">
+                <span><i class="bi bi-tag"></i> Smart Farming</span>
+                <span>07 / 11</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. Weather Station & AQI -->
+          <div class="project-card cloud">
+            <div class="project-thumb">
+              <span class="project-track-badge">Cloud</span>
+              <img src="../assets/img/projects/weather-station.png" alt="Weather Station and Air Quality Monitoring System" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>Weather Station &amp; Air Quality Monitor</h3>
+              <p>A BME680-based station that streams temperature, humidity, pressure, and air quality data to Ubidots over MQTT for remote, real-time viewing.</p>
+              <div class="project-tags">
+                <span class="skill-tag">BME680</span>
+                <span class="skill-tag">MQTT</span>
+                <span class="skill-tag">Ubidots</span>
+              </div>
+              <div class="project-meta">
+                <span><i class="bi bi-tag"></i> Environmental Monitoring</span>
+                <span>08 / 11</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9. IoT Water Level Monitoring -->
+          <div class="project-card cloud">
+            <div class="project-thumb">
+              <span class="project-track-badge">Cloud</span>
+              <img src="../assets/img/projects/water-level.png" alt="IoT Water Level Monitoring System with Blynk" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>Water Level Monitoring System</h3>
+              <p>An ultrasonic sensor and relay-based system that tracks tank water levels and automates pump control, viewable remotely via Blynk and a local LCD.</p>
+              <div class="project-tags">
+                <span class="skill-tag">Ultrasonic Sensor</span>
+                <span class="skill-tag">Blynk</span>
+                <span class="skill-tag">Automation</span>
+              </div>
+              <div class="project-meta">
+                <span><i class="bi bi-tag"></i> Smart Automation</span>
+                <span>09 / 11</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10. IoT Early Flood Detection -->
+          <div class="project-card hardware">
+            <div class="project-thumb">
+              <span class="project-track-badge">Hardware</span>
+              <img src="../assets/img/projects/flood-detection.png" alt="IoT Early Flood Detection and Monitoring System" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>Early Flood Detection System</h3>
+              <p>A low-cost NodeMCU system that tracks rising water levels in real time and triggers visual and audible alerts to warn communities early.</p>
+              <div class="project-tags">
+                <span class="skill-tag">ESP8266</span>
+                <span class="skill-tag">Ultrasonic Sensor</span>
+                <span class="skill-tag">Early Warning</span>
+              </div>
+              <div class="project-meta">
+                <span><i class="bi bi-tag"></i> Public Safety</span>
+                <span>10 / 11</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 11. IoT Face Recognition Attendance (ESP32-S3) -->
+          <div class="project-card ai">
+            <div class="project-thumb">
+              <span class="project-track-badge">AI</span>
+              <img src="../assets/img/projects/face-recognition-attendance.png" alt="IoT Face Recognition Attendance System on ESP32-S3" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>Face Recognition Attendance System</h3>
+              <p>An ESP32-S3-powered system with on-board AI face recognition that captures, verifies, and publishes attendance data over MQTT in real time.</p>
+              <div class="project-tags">
+                <span class="skill-tag">ESP32-S3</span>
+                <span class="skill-tag">MQTT</span>
+                <span class="skill-tag">On-device AI</span>
+              </div>
+              <div class="project-meta">
+                <span><i class="bi bi-tag"></i> Access Control</span>
+                <span>11 / 11</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </section>
 
