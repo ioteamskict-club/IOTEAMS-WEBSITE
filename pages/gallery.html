@@ -202,7 +202,26 @@
 
     .gallery-category { position: absolute; top: var(--space-xs); left: var(--space-xs); z-index: 1; }
 
-    .load-more-wrap { text-align: center; margin-top: var(--space-xl); }
+    .gallery-more-note {
+      text-align: center;
+      margin-top: var(--space-xl);
+      font-family: var(--font-mono);
+      font-size: var(--fs-sm);
+      color: var(--white-muted);
+      letter-spacing: 0.03em;
+    }
+
+    .gallery-more-note a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,168,76,0.4);
+      transition: color var(--transition-base), border-color var(--transition-base);
+    }
+
+    .gallery-more-note a:hover {
+      color: var(--gold-light);
+      border-color: var(--gold-light);
+    }
 
     /* ══════════════════════════════════════
        ALBUM SECTION
@@ -876,7 +895,7 @@
     </div>
 
     <!-- FILTER BAR -->
-    <div id="filter-bar">
+    <!-- <div id="filter-bar">
       <div class="filter-inner">
         <div class="filter-left">
           <span class="filter-label">Album:</span>
@@ -890,7 +909,7 @@
           Showing <span id="visibleCount">12</span> photos
         </span>
       </div>
-    </div>
+    </div> -->
 
     <!-- GALLERY MASONRY -->
     <section id="gallery">
@@ -912,11 +931,6 @@
             <img src="../assets/img/gallery/gallery-team.jpg"
                  alt="IoTeams IIUM team photo 2025"
                  loading="lazy">
-            <div class="gallery-category"><span class="badge badge-white">Team</span></div>
-            <div class="gallery-overlay">
-              <i class="bi bi-arrows-angle-expand"></i>
-              <span class="gallery-overlay-label">View</span>
-            </div>
           </a>
 
           <a href="../assets/img/gallery/gallery-2.jpg"
@@ -927,11 +941,6 @@
             <div class="gallery-placeholder-img">
               <i class="bi bi-image"></i>
               <span>gallery-2.jpg</span>
-            </div>
-            <div class="gallery-category"><span class="badge badge-gold">Hackathon</span></div>
-            <div class="gallery-overlay">
-              <i class="bi bi-arrows-angle-expand"></i>
-              <span class="gallery-overlay-label">View</span>
             </div>
           </a>
 
@@ -944,11 +953,6 @@
               <i class="bi bi-image"></i>
               <span>gallery-3.jpg</span>
             </div>
-            <div class="gallery-category"><span class="badge badge-white">Team</span></div>
-            <div class="gallery-overlay">
-              <i class="bi bi-arrows-angle-expand"></i>
-              <span class="gallery-overlay-label">View</span>
-            </div>
           </a>
 
           <a href="../assets/img/gallery/gallery-4.jpg"
@@ -959,11 +963,6 @@
             <div class="gallery-placeholder-img">
               <i class="bi bi-image"></i>
               <span>gallery-4.jpg</span>
-            </div>
-            <div class="gallery-category"><span class="badge badge-turq">Showcase</span></div>
-            <div class="gallery-overlay">
-              <i class="bi bi-arrows-angle-expand"></i>
-              <span class="gallery-overlay-label">View</span>
             </div>
           </a>
 
@@ -976,11 +975,6 @@
               <i class="bi bi-image"></i>
               <span>gallery-5.jpg</span>
             </div>
-            <div class="gallery-category"><span class="badge badge-teal">Workshop</span></div>
-            <div class="gallery-overlay">
-              <i class="bi bi-arrows-angle-expand"></i>
-              <span class="gallery-overlay-label">View</span>
-            </div>
           </a>
 
           <a href="../assets/img/gallery/gallery-6.jpg"
@@ -992,116 +986,13 @@
               <i class="bi bi-image"></i>
               <span>gallery-6.jpg</span>
             </div>
-            <div class="gallery-category"><span class="badge badge-gold">Hackathon</span></div>
-            <div class="gallery-overlay">
-              <i class="bi bi-arrows-angle-expand"></i>
-              <span class="gallery-overlay-label">View</span>
-            </div>
-          </a>
-
-          <a href="../assets/img/gallery/gallery-7.jpg"
-             class="gallery-item glightbox"
-             data-gallery="ioteams"
-             data-category="showcase"
-             data-title="Demo Day — Air Quality Monitor">
-            <div class="gallery-placeholder-img">
-              <i class="bi bi-image"></i>
-              <span>gallery-7.jpg</span>
-            </div>
-            <div class="gallery-category"><span class="badge badge-turq">Showcase</span></div>
-            <div class="gallery-overlay">
-              <i class="bi bi-arrows-angle-expand"></i>
-              <span class="gallery-overlay-label">View</span>
-            </div>
-          </a>
-
-          <a href="../assets/img/gallery/gallery-8.jpg"
-             class="gallery-item glightbox"
-             data-gallery="ioteams"
-             data-category="team"
-             data-title="Team Outing 2025">
-            <div class="gallery-placeholder-img">
-              <i class="bi bi-image"></i>
-              <span>gallery-8.jpg</span>
-            </div>
-            <div class="gallery-category"><span class="badge badge-white">Team</span></div>
-            <div class="gallery-overlay">
-              <i class="bi bi-arrows-angle-expand"></i>
-              <span class="gallery-overlay-label">View</span>
-            </div>
-          </a>
-
-          <a href="../assets/img/gallery/gallery-9.jpg"
-             class="gallery-item glightbox"
-             data-gallery="ioteams"
-             data-category="workshop"
-             data-title="Cloud Integration Workshop">
-            <div class="gallery-placeholder-img">
-              <i class="bi bi-image"></i>
-              <span>gallery-9.jpg</span>
-            </div>
-            <div class="gallery-category"><span class="badge badge-teal">Workshop</span></div>
-            <div class="gallery-overlay">
-              <i class="bi bi-arrows-angle-expand"></i>
-              <span class="gallery-overlay-label">View</span>
-            </div>
-          </a>
-
-          <a href="../assets/img/gallery/gallery-10.jpg"
-             class="gallery-item glightbox"
-             data-gallery="ioteams"
-             data-category="hackathon"
-             data-title="Winners — Hackathon 2025">
-            <div class="gallery-placeholder-img">
-              <i class="bi bi-image"></i>
-              <span>gallery-10.jpg</span>
-            </div>
-            <div class="gallery-category"><span class="badge badge-gold">Hackathon</span></div>
-            <div class="gallery-overlay">
-              <i class="bi bi-arrows-angle-expand"></i>
-              <span class="gallery-overlay-label">View</span>
-            </div>
-          </a>
-
-          <a href="../assets/img/gallery/gallery-11.jpg"
-             class="gallery-item glightbox"
-             data-gallery="ioteams"
-             data-category="team"
-             data-title="IoTeams Orientation Night">
-            <div class="gallery-placeholder-img">
-              <i class="bi bi-image"></i>
-              <span>gallery-11.jpg</span>
-            </div>
-            <div class="gallery-category"><span class="badge badge-white">Team</span></div>
-            <div class="gallery-overlay">
-              <i class="bi bi-arrows-angle-expand"></i>
-              <span class="gallery-overlay-label">View</span>
-            </div>
-          </a>
-
-          <a href="../assets/img/gallery/gallery-12.jpg"
-             class="gallery-item glightbox"
-             data-gallery="ioteams"
-             data-category="showcase"
-             data-title="Smart Parking System Demo">
-            <div class="gallery-placeholder-img">
-              <i class="bi bi-image"></i>
-              <span>gallery-12.jpg</span>
-            </div>
-            <div class="gallery-category"><span class="badge badge-turq">Showcase</span></div>
-            <div class="gallery-overlay">
-              <i class="bi bi-arrows-angle-expand"></i>
-              <span class="gallery-overlay-label">View</span>
-            </div>
           </a>
 
         </div>
 
-        <div class="load-more-wrap" data-aos="fade-up">
-          <button class="btn-outline-gold" id="loadMore">
-            <i class="bi bi-plus-circle"></i> Load More Photos
-          </button>
-        </div>
+        <p class="gallery-more-note" data-aos="fade-up">
+          Want to see more? Browse the full collection in our <a href="#albums">Event Albums</a> below.
+        </p>
 
       </div>
     </section>
@@ -1599,7 +1490,7 @@
       }
     });
 
-    /* ── gallery masonry filter ──────────────────────────── */
+    /* ── gallery masonry filter (kept for future use; filter bar is hidden) ── */
     const filterBtns   = document.querySelectorAll(".filter-btn");
     const galleryItems = document.querySelectorAll(".gallery-item");
     const visibleCount = document.getElementById("visibleCount");
@@ -1622,13 +1513,6 @@
     });
 
     updateCount();
-
-    /* ── load more (simulated) ───────────────────────────── */
-    document.getElementById("loadMore")?.addEventListener("click", function () {
-      this.innerHTML = '<i class="bi bi-check-circle"></i> All Photos Loaded';
-      this.disabled  = true;
-      this.style.opacity = "0.5";
-    });
 
     /* ── init ────────────────────────────────────────────── */
     renderAlbums();
