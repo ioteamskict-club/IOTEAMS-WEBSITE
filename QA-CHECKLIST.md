@@ -73,25 +73,6 @@ Tick off each item in VS Code or GitHub Issues.
 - [ ] Learning path 4-step flow shows
 - [ ] Tech stack 4-column grid shows
 
-### Apply (`pages/apply.html`)
-- [ ] Step 1 — personal info validation works
-- [ ] Step 2 — academic info validation works
-- [ ] Step 3 — track selection works (radio buttons)
-- [ ] Step 4 — review summary shows filled data
-- [ ] Agreement checkbox required
-- [ ] Submit shows success state
-- [ ] Benefits grid shows 6 cards
-- [ ] FAQ accordion opens/closes
-
-### Contact (`pages/contact.html`)
-- [ ] 4 info cards display correctly
-- [ ] Office hours table shows
-- [ ] Social links grid shows 4 platforms
-- [ ] Contact form fields validate on submit
-- [ ] Submit shows loading then success state
-- [ ] Google Maps embed loads
-- [ ] Directions list shows 4 steps
-- [ ] Quick links below form work
 
 ### Footer (all pages)
 - [ ] Logo links to homepage

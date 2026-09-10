@@ -26,10 +26,6 @@
 - `bootstrap-icons/`   → Bootstrap Icons font files
 - `php-email-form/`    → PHP Email Form library (pro - contact form)
 
-## forms/
-- `contact.php`        → Contact form handler
-- `apply.php`          → Apply/join form handler
-
 ## pages/
 - `our-story.html`     → About / team page
 - `events.html`        → Events listing
