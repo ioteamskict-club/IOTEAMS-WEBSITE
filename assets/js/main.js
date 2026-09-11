@@ -9,12 +9,11 @@
    4.  Scroll to top button
    5.  AOS — Animate on Scroll + resize refresh
    6.  GLightbox — gallery lightbox
-   7.  Swiper — carousel / slider
-   8.  Scroll reveal — IntersectionObserver
-   9.  Smooth scroll — anchor links
-   10. Stats counter animation
-   11. Reduced motion — respects prefers-reduced-motion
-   12. Lazy image loading
+   7.  Scroll reveal — IntersectionObserver
+   8.  Smooth scroll — anchor links
+   9.  Stats counter animation
+   10. Reduced motion — respects prefers-reduced-motion
+   11. Lazy image loading
    ============================================================ */
 
 (function () {
@@ -205,26 +204,7 @@ function playVideo(videoId, btn) {
   
 
   /* ============================================================
-     7. SWIPER
-  ============================================================ */
-  window.addEventListener("load", () => {
-    if (typeof Swiper === "undefined") return;
-
-    document.querySelectorAll(".init-swiper").forEach((el) => {
-      const configEl = el.querySelector(".swiper-config");
-      if (!configEl) return;
-      try {
-        const cfg = JSON.parse(configEl.innerHTML.trim());
-        if (reducedMotion && cfg.autoplay) cfg.autoplay = false;
-        new Swiper(el, cfg);
-      } catch (err) {
-        console.warn("[IoTeams] Swiper config error:", err);
-      }
-    });
-  });
-
-  /* ============================================================
-     8. SCROLL REVEAL — IntersectionObserver
+     7. SCROLL REVEAL — IntersectionObserver
      Watches .reveal elements. Adds .visible on intersection.
      If reduced motion preferred — show all immediately.
   ============================================================ */
@@ -249,7 +229,7 @@ function playVideo(videoId, btn) {
   }
 
   /* ============================================================
-     9. SMOOTH SCROLL — ANCHOR LINKS
+     8. SMOOTH SCROLL — ANCHOR LINKS
      Offsets by navbar height + 8px so content clears the
      fixed nav. Respects reduced motion.
   ============================================================ */
@@ -270,7 +250,7 @@ function playVideo(videoId, btn) {
   });
 
   /* ============================================================
-     10. STATS COUNTER ANIMATION
+     9. STATS COUNTER ANIMATION
      Counts .stat-number elements up from 0 when visible.
      Supports formats: "120+", "30+", "100%", "15+".
      Skipped if reduced motion preferred (values stay as-is).

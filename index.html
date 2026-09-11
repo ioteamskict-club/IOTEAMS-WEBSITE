@@ -16,8 +16,7 @@
   7. Events preview — upcoming events
   8. Gallery preview — recent photos
   9. Blog preview — latest posts
-  10. CTA — join IoTeams
-  11. Footer (shared)
+  10. Footer (shared)
   ============================================================
 -->
 
@@ -63,9 +62,6 @@
 
   <!-- AOS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-
-  <!-- Swiper -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
   <!-- GLightbox -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
@@ -771,47 +767,6 @@
 
     .blog-read-more:hover { gap: 0.75rem; color: var(--gold-light); }
 
-    /* ══════════════════════════════════════
-       CTA SECTION
-    ══════════════════════════════════════ */
-    #cta {
-      background: var(--black-2);
-      padding: var(--space-3xl) var(--space-2xl);
-      position: relative;
-      overflow: hidden;
-      border-top: 1px solid var(--border-gold);
-    }
-
-    .cta-inner {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .cta-inner h2 {
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      font-weight: 900;
-      margin-bottom: var(--space-sm);
-    }
-
-    .cta-inner h2 span { color: var(--gold); }
-
-    .cta-inner p {
-      font-size: var(--fs-lg);
-      color: var(--white-dim);
-      margin-bottom: var(--space-xl);
-      font-weight: 300;
-    }
-
-    .cta-actions {
-      display: flex;
-      gap: var(--space-sm);
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
     /* Section header shared layout */
     .section-header-row {
       display: flex;
@@ -881,6 +836,12 @@
         <li><a href="pages/gallery.html">Gallery</a></li>
         <li><a href="pages/blog.html">Blog</a></li>
       </ul>
+
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
     </div>
   </nav>
@@ -1326,27 +1287,6 @@
       </div>
     </section>
 
-    <!-- ══════════════════════════════
-         8. CTA — JOIN US
-    ══════════════════════════════ -->
-    <section id="cta">
-      <div class="hero-glow" style="top:-150px;right:-150px;opacity:0.6"></div>
-      <div class="cta-inner">
-        <span class="section-tag" style="display:block;text-align:center;margin-bottom:var(--space-sm)" data-aos="fade-up">
-          ◆ Ready to Join?
-        </span>
-        <h2 data-aos="fade-up" data-aos-delay="100">
-          Be Part of the <span>IoT Revolution</span>
-        </h2>
-        <p data-aos="fade-up" data-aos-delay="200">
-          Open to all IIUM students regardless of faculty.
-          No experience needed — just curiosity and passion for technology.
-        </p>
-        <div class="cta-actions" data-aos="fade-up" data-aos-delay="300">
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <!-- ══════════════════════════════
@@ -1376,7 +1316,7 @@
       <div class="footer-links">
         <h6>Pages</h6>
         <ul class="footer-nav">
-          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="pages/our-story.html">Our Story</a></li>
           <li><a href="pages/programmes.html">Projects</a></li>
           <li><a href="pages/events.html">Events</a></li>
@@ -1430,9 +1370,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- AOS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
-  <!-- Swiper -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <!-- GLightbox -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
