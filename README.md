@@ -13,7 +13,7 @@
 
 ## 🌐 Live Website
 
-👉 **[Visit IoTeams IIUM](https://endmcst.github.io/demo-ioteams/)**
+👉 **[Visit IoTeams IIUM](VERCEL LINK)**
 
 ---
 
@@ -48,23 +48,7 @@ ioteams-website/
 │   ├── js/
 │   │   ├── main.js             # Shared JS (nav, scroll, AOS)
 │   │   └── forms.js            # Form handlers (contact, apply)
-│   └── img/
-│       ├── hero/               # Hero / banner images
-│       ├── gallery/            # Gallery photos
-│       ├── blog/               # Blog post images
-│       ├── team/               # Member profile photos
-│       ├── events/             # Event photos
-│       └── icons/              # Logo, favicon, og-image
 │
-├── forms/
-│   ├── contact.php             # PHP contact handler (server only)
-│   └── apply.php               # PHP application handler (server only)
-│
-├── vendor/
-│   └── VENDOR-LINKS.md         # CDN links reference
-│
-├── BACKEND-SETUP.md            # Form backend setup guide
-└── STRUCTURE.md                # Folder structure explanation
 ```
 
 ---
@@ -305,57 +289,17 @@ git push origin feature/your-feature-name
 # Open a Pull Request on GitHub → merge to develop → test → merge to main
 ```
 
-### Commit Message Format
 
-```
-type: short description (max 72 chars)
-
-Optional longer explanation if needed.
-```
-
-**Types:** `feat` `fix` `content` `style` `docs` `refactor` `chore`
-
-**Examples:**
-```
-feat: add hackathon registration countdown timer
-fix: correct mobile nav overlap on iOS Safari
-content: add Semester 2 2025 events
-style: adjust hero font size on small screens
-docs: update BACKEND-SETUP with EmailJS steps
-```
 
 ### Rules
 
 - ✅ Always `git pull origin main` before starting work
 - ✅ Test locally with Live Server before pushing
 - ✅ Use descriptive commit messages
-- ✅ Images must be compressed (use [Squoosh](https://squoosh.app/))
+- ✅ Images store via Supabase
 - ❌ Never push directly to `main` (use PRs)
 - ❌ Never commit API keys or secrets
 - ❌ Never push broken or untested code to `main`
-
----
-
-## 🐛 Reporting Issues
-
-Open a **GitHub Issue** with:
-- What page / feature is affected
-- What you expected to happen
-- What actually happened
-- Screenshots if relevant
-- Browser and device used
-
----
-
-## 👥 Contributors
-
-| Role | Name |
-|------|------|
-| President & Lead Dev | Ahmad Faris |
-| Vice President | Nurul Izzati |
-| Technical Director | Muhammad Syafiq |
-| Events Director | Amirah Zahra |
-| Media & Design | Irfan Hakimi |
 
 ---
 
