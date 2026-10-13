@@ -516,51 +516,49 @@
                 <section class="about">
                         <br>
                                             <!-- Melting ice cream divider (phase colours) -->
-                            <div style="display: flex; width: 100%;" aria-hidden="true">
+                                                <!-- Melting divider (smooth, blended colours) -->
+                    <svg viewBox="0 0 1440 90" preserveAspectRatio="none" width="100%" height="90"
+                        style="display: block; margin-top: -1px;" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="dripGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1440" y2="0">
+                        <stop offset="0"    stop-color="#14917f"/>
+                        <stop offset="0.25" stop-color="#14917f"/>
+                        <stop offset="0.45" stop-color="#e0a100"/>
+                        <stop offset="0.55" stop-color="#e0a100"/>
+                        <stop offset="0.75" stop-color="#e4572e"/>
+                        <stop offset="1"    stop-color="#e4572e"/>
+                        </linearGradient>
+                    </defs>
 
-                            <!-- Teal (Explore) -->
-                            <svg height="64" style="display: block; flex: 1;">
-                                <defs>
-                                <pattern id="dripTeal" width="300" height="64" patternUnits="userSpaceOnUse">
-                                    <path d="M0,0 L0,14 Q25,24 50,14 T100,14 T150,14 T200,14 T250,14 T300,14 L300,0 Z" fill="#14917f"/>
-                                    <path d="M33,10 V40 a7,7 0 0 0 14,0 V10 Z" fill="#14917f"/>
-                                    <path d="M141,10 V26 a9,9 0 0 0 18,0 V10 Z" fill="#14917f"/>
-                                    <path d="M230,10 V49 a5,5 0 0 0 10,0 V10 Z" fill="#14917f"/>
-                                    <circle cx="235" cy="60" r="3" fill="#14917f"/>
-                                </pattern>
-                                </defs>
-                                <rect width="100%" height="64" fill="url(#dripTeal)"/>
-                            </svg>
+                    <!-- the melting shape -->
+                    <path fill="url(#dripGrad)" d="
+                        M0,0 L0,26
+                        Q75,38 126,26
+                        Q141,26 142,36 V60 A8,8 0 0 0 158,60 V36 Q159,26 174,26
+                        Q285,40 396,26
+                        Q411,26 412,36 V50 A8,8 0 0 0 428,50 V36 Q429,26 444,26
+                        Q560,40 676,26
+                        Q691,26 692,36 V74 A8,8 0 0 0 708,74 V36 Q709,26 724,26
+                        Q830,40 936,26
+                        Q951,26 952,36 V54 A8,8 0 0 0 968,54 V36 Q969,26 984,26
+                        Q1105,40 1226,26
+                        Q1241,26 1242,36 V66 A8,8 0 0 0 1258,66 V36 Q1259,26 1274,26
+                        Q1357,38 1440,26
+                        L1440,0 Z"/>
 
-                            <!-- Amber (Fabricate) -->
-                            <svg height="64" style="display: block; flex: 1;">
-                                <defs>
-                                <pattern id="dripAmber" width="300" height="64" patternUnits="userSpaceOnUse" patternTransform="translate(-90 0)">
-                                    <path d="M0,0 L0,14 Q25,24 50,14 T100,14 T150,14 T200,14 T250,14 T300,14 L300,0 Z" fill="#e0a100"/>
-                                    <path d="M33,10 V40 a7,7 0 0 0 14,0 V10 Z" fill="#e0a100"/>
-                                    <path d="M141,10 V26 a9,9 0 0 0 18,0 V10 Z" fill="#e0a100"/>
-                                    <path d="M230,10 V49 a5,5 0 0 0 10,0 V10 Z" fill="#e0a100"/>
-                                    <circle cx="235" cy="60" r="3" fill="#e0a100"/>
-                                </pattern>
-                                </defs>
-                                <rect width="100%" height="64" fill="url(#dripAmber)"/>
-                            </svg>
+                    <!-- tiny falling drops -->
+                    <circle cx="700"  cy="86" r="3.5" fill="url(#dripGrad)"/>
+                    <circle cx="1250" cy="80" r="3"   fill="url(#dripGrad)"/>
 
-                            <!-- Coral (Pitch) -->
-                            <svg height="64" style="display: block; flex: 1;">
-                                <defs>
-                                <pattern id="dripCoral" width="300" height="64" patternUnits="userSpaceOnUse" patternTransform="translate(-180 0)">
-                                    <path d="M0,0 L0,14 Q25,24 50,14 T100,14 T150,14 T200,14 T250,14 T300,14 L300,0 Z" fill="#e4572e"/>
-                                    <path d="M33,10 V40 a7,7 0 0 0 14,0 V10 Z" fill="#e4572e"/>
-                                    <path d="M141,10 V26 a9,9 0 0 0 18,0 V10 Z" fill="#e4572e"/>
-                                    <path d="M230,10 V49 a5,5 0 0 0 10,0 V10 Z" fill="#e4572e"/>
-                                    <circle cx="235" cy="60" r="3" fill="#e4572e"/>
-                                </pattern>
-                                </defs>
-                                <rect width="100%" height="64" fill="url(#dripCoral)"/>
-                            </svg>
-
-                            </div>
+                    <!-- glossy highlights -->
+                    <g fill="#ffffff" opacity="0.22">
+                        <rect x="145.5"  y="40" width="2.5" height="16" rx="1.2"/>
+                        <rect x="415.5"  y="40" width="2.5" height="6"  rx="1.2"/>
+                        <rect x="695.5"  y="40" width="2.5" height="30" rx="1.2"/>
+                        <rect x="955.5"  y="40" width="2.5" height="10" rx="1.2"/>
+                        <rect x="1245.5" y="40" width="2.5" height="22" rx="1.2"/>
+                    </g>
+                    </svg>
 
                 
                     <div class="wrap" style="padding: 0 clamp(24px, 10vw, 206px);">
