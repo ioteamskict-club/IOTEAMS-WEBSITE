@@ -303,6 +303,58 @@
             .event-list-action {
             flex-shrink: 0;
             }
+
+            
+            /* Phases timeline */
+            .phases { padding: 24px 0 56px; }
+            .phases h2, .about h2, .info h2 {
+                font-family: var(--head);
+                font-size: 1.75rem;
+                letter-spacing: -0.01em;
+                margin: 0 0 28px;
+            }
+            
+            .timeline {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0;
+                position: relative;
+            }
+            
+            .phase {
+                position: relative;
+                padding: 28px 24px 8px 0;
+                border-top: 6px solid var(--c);
+            }
+            .phase:nth-child(1) { --c: var(--explore); }
+            .phase:nth-child(2) { --c: var(--fabricate); }
+            .phase:nth-child(3) { --c: var(--pitch); }
+            
+            .phase .date {
+                font-weight: 600;
+                color: var(--muted);
+                margin: 0 0 4px;
+            }
+            .phase h3 {
+                font-family: var(--head);
+                font-size: 2rem;
+                font-weight: 800;
+                margin: 0 0 12px;
+                color: var(--ink);
+            }
+            .phase h3::after {
+                content: "";
+                display: inline-block;
+                width: 14px; height: 14px;
+                margin-left: 10px;
+                border-radius: 50%;
+                background: var(--c);
+            }
+            .phase p { margin: 0 0 12px; max-width: 32ch; }
+
     </style>
 </head>
 
