@@ -373,6 +373,51 @@
             .info dt, .info dd { padding: 14px 0; border-bottom: 1px solid var(--line); margin: 0; }
             .info dt { font-weight: 600; color: var(--muted); }
 
+
+                            /* ══════════════════════════════════════
+                MOBILE / TABLET FIXES
+                ══════════════════════════════════════ */
+                @media (max-width: 768px) {
+
+                /* Three phases: stack in one column */
+                .timeline { grid-template-columns: minmax(0, 1fr); }
+                .phase { padding-right: 0; margin-bottom: 20px; }
+                .phase h3 { font-size: 1.6rem; }
+
+                /* About: one column */
+                .about .cols { grid-template-columns: minmax(0, 1fr); gap: 0; }
+
+                /* Details: label on top, value below */
+                .info dl { grid-template-columns: minmax(0, 1fr); }
+                .info dt { border-bottom: none; padding-bottom: 0; }
+                .info dd { overflow-wrap: anywhere; }
+
+                /* Featured event card (the gold date block + text) */
+                #upcoming { padding: var(--space-2xl) var(--space-md); }
+
+                .event-featured { grid-template-columns: minmax(0, 1fr); }
+
+                .event-featured-date {
+                    flex-direction: row;
+                    gap: 0.75rem;
+                    padding: var(--space-md);
+                }
+                .event-featured-date .day { font-size: 3rem; }
+
+                .event-featured-body { padding: var(--space-md); min-width: 0; }
+                .event-featured-body h2,
+                .event-featured-body p { overflow-wrap: anywhere; }
+
+                /* Event list cards */
+                .event-list-card {
+                    grid-template-columns: minmax(0, 1fr);
+                    gap: var(--space-sm);
+                    padding: var(--space-md);
+                }
+                .event-list-date { text-align: left; }
+                }
+
+
     </style>
 </head>
 
@@ -516,7 +561,7 @@
                 <section class="about" data-aos="fade-up" style="border-top: none; padding-top: 40px; padding-bottom: 0;" >
                         <br>
                                                 <!-- Melting divider (smooth, blended colours) -->
-                    <svg viewBox="0 0 1440 90" preserveAspectRatio="none" width="100%" height="90"
+                    <svg viewBox="0 0 1440 90" preserveAspectRatio="xMidYMid slice" width="100%" height="90"
                         style="display: block; margin-top: -1px;" aria-hidden="true">
                     <defs>
                         <linearGradient id="dripGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1440" y2="0">
