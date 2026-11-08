@@ -191,25 +191,26 @@
       color: var(--gold);
     }
 
-    /* Cover image container */
-.post-cover {
-  width: 100%;
-  aspect-ratio: auto;         /* Allows height to adjust naturally to the image */
-  background: var(--black-3);
-  border-radius: var(--radius-md);
-  margin-bottom: var(--space-3xl);
-  overflow: hidden;
-  position: relative;
-  border: 1px solid var(--border-dark);
-}
+      /* Flexible, responsive cover image container */
+      .post-cover {
+        width: 100%;
+        aspect-ratio: auto;             /* Adjusts height based on image size */
+        background: var(--black-3);
+        border-radius: var(--radius-md);
+        margin-bottom: var(--space-3xl);
+        overflow: hidden;
+        position: relative;
+        border: 1px solid var(--border-dark);
+      }
 
-/* Cover image styling */
-.post-cover img {
-  width: 100%;
-  height: auto;               /* Keeps original proportions */
-  display: block;
-  object-fit: contain;        /* Ensures zero cropping of text and faces */
-}
+      .post-cover img {
+        width: 100%;
+        height: auto;                   /* Prevents zooming or vertical slicing */
+        display: block;
+        object-fit: contain;
+      }
+
+
     .featured-ribbon {
       position: absolute;
       top: 1rem;
@@ -582,10 +583,69 @@
       .author-bio-card { flex-direction: column; }
     }
 
-    @media (max-width: 576px) {
-      .post-author-row { flex-direction: column; align-items: flex-start; }
-      .post-title { font-size: 2rem; }
+        @media (max-width: 576px) {
+          .post-author-row { flex-direction: column; align-items: flex-start; }
+          .post-title { font-size: 2rem; }
+        }
+
+              /* Horizontal scroll wrapper for tables on small screens */
+          .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: var(--space-lg);
+          }
+
+          .post-content table {
+            width: 100%;
+            min-width: 550px;               /* Keeps table columns formatted nicely */
+            border-collapse: collapse;
+          }
+
+    /* ══════════════════════════════════════
+      RESPONSIVE BREAKPOINTS (Mobile & Tablet)
+    ══════════════════════════════════════ */
+
+    /* Tablets & Small Laptops (under 991px) */
+    @media (max-width: 991px) {
+      .post-layout {
+        grid-template-columns: 1fr;    /* Stack main post and sidebar vertically */
+      }
+
+      .post-sidebar {
+        position: static;             /* Disable sticky sidebar on smaller screens */
+        margin-top: var(--space-2xl);
+      }
+
+      .author-bio-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
     }
+
+    /* Mobile Phones (under 576px) */
+    @media (max-width: 576px) {
+      #post-hero, #post-body {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .post-title {
+        font-size: 1.75rem;          /* Scale down main headline for phones */
+      }
+
+      .quick-facts {
+        grid-template-columns: 1fr 1fr; /* Display 2-column grid on mobile */
+      }
+
+      .post-author-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    
+
   </style>
 </head>
 
