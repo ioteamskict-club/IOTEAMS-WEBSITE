@@ -191,25 +191,7 @@
       color: var(--gold);
     }
 
-      /* Flexible, responsive cover image container */
-      .post-cover {
-        width: 100%;
-        aspect-ratio: auto;             /* Adjusts height based on image size */
-        background: var(--black-3);
-        border-radius: var(--radius-md);
-        margin-bottom: var(--space-3xl);
-        overflow: hidden;
-        position: relative;
-        border: 1px solid var(--border-dark);
-      }
-
-      .post-cover img {
-        width: 100%;
-        height: auto;                   /* Prevents zooming or vertical slicing */
-        display: block;
-        object-fit: contain;
-      }
-
+      
 
     .featured-ribbon {
       position: absolute;
@@ -577,32 +559,9 @@
       color: var(--gold);
     }
 
-    @media (max-width: 768px) {
-      .post-layout { grid-template-columns: 1fr; }
-      .post-sidebar { position: static; }
-      .author-bio-card { flex-direction: column; }
-    }
+   
 
-        @media (max-width: 768px) {
-          .post-author-row { flex-direction: column; align-items: flex-start; }
-          .post-title { font-size: 2rem; }
-        }
-
-              /* Horizontal scroll wrapper for tables on small screens */
-          .table-responsive {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            margin-bottom: var(--space-lg);
-          }
-
-          .post-content table {
-            width: 100%;
-            min-width: 550px;               /* Keeps table columns formatted nicely */
-            border-collapse: collapse;
-          }
-
-            /* ════════════════════════════════════════════════════════════
+  /* ════════════════════════════════════════════════════════════
    1. AUTOMATICALLY FITTING COVER IMAGE
    ════════════════════════════════════════════════════════════ */
 .post-cover {
