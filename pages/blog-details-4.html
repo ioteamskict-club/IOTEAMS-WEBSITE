@@ -602,48 +602,97 @@
             border-collapse: collapse;
           }
 
-    /* ══════════════════════════════════════
-      RESPONSIVE BREAKPOINTS (Mobile & Tablet)
-    ══════════════════════════════════════ */
+            /* ════════════════════════════════════════════════════════════
+   1. AUTOMATICALLY FITTING COVER IMAGE
+   ════════════════════════════════════════════════════════════ */
+.post-cover {
+  width: 100%;
+  aspect-ratio: auto;
+  background: var(--black-3);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3xl);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--border-dark);
+}
 
-    /* Tablets & Small Laptops (under 991px) */
-    @media (max-width: 991px) {
-      .post-layout {
-        grid-template-columns: 1fr;    /* Stack main post and sidebar vertically */
-      }
+.post-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* Shows full graphic without cropping or zooming */
+}
 
-      .post-sidebar {
-        position: static;             /* Disable sticky sidebar on smaller screens */
-        margin-top: var(--space-2xl);
-      }
+/* ════════════════════════════════════════════════════════════
+   2. AUTOMATICALLY FITTING TABLE (NO DRAGGING NEEDED)
+   ════════════════════════════════════════════════════════════ */
+.post-content table {
+  width: 100% !important;
+  max-width: 100%;
+  table-layout: fixed; /* Prevents text from pushing table wider than screen */
+  word-wrap: break-word; /* Automatically wraps long text */
+  border-collapse: collapse;
+  margin: var(--space-md) 0 var(--space-lg);
+  font-size: var(--fs-sm);
+  background: var(--black-3);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
 
-      .author-bio-card {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-      }
-    }
+.post-content th,
+.post-content td {
+  padding: 0.65rem 0.5rem;
+  border-bottom: 1px solid var(--border-dark);
+  text-align: left;
+  color: var(--white-dim);
+  word-break: break-word;
+}
 
-    /* Mobile Phones (under 576px) */
-    @media (max-width: 576px) {
-      #post-hero, #post-body {
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
+/* ════════════════════════════════════════════════════════════
+   3. RESPONSIVE BREAKPOINTS (PHONES, TABLETS & LAPTOPS)
+   ════════════════════════════════════════════════════════════ */
 
-      .post-title {
-        font-size: 1.75rem;          /* Scale down main headline for phones */
-      }
+/* Tablets & Small Laptops (under 991px) */
+@media (max-width: 991px) {
+  .post-layout {
+    grid-template-columns: 1fr !important; /* Stack sidebar under main content */
+  }
 
-      .quick-facts {
-        grid-template-columns: 1fr 1fr; /* Display 2-column grid on mobile */
-      }
+  .post-sidebar {
+    position: static !important;
+    margin-top: var(--space-2xl);
+  }
 
-      .post-author-row {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
+  .author-bio-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/* Mobile Phones (under 576px) */
+@media (max-width: 576px) {
+  #post-hero, #post-body {
+    padding-left: 0.8rem !important;
+    padding-right: 0.8rem !important;
+  }
+
+  .post-title {
+    font-size: 1.6rem !important; /* Scales headline down smoothly for small phone screens */
+  }
+
+  .quick-facts {
+    grid-template-columns: 1fr 1fr !important; /* 2x2 grid on phones */
+  }
+
+  /* Compact padding for table cells on small phone screens */
+  .post-content th,
+  .post-content td {
+    padding: 0.4rem 0.3rem !important;
+    font-size: 0.78rem !important;
+  }
+}
     
 
   </style>
