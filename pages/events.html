@@ -566,6 +566,74 @@
       align-items: center;
     }
 
+    .up-card, .up-card *, .up-card *::before, .up-card *::after { box-sizing: border-box; }
+
+          .up-card {
+            display: flex; flex-wrap: wrap;
+            background: #141414; border: 1px solid #2A2A2A; border-radius: 16px; overflow: hidden;
+            font-family: 'DM Sans', system-ui, sans-serif; line-height: 1.6; color: #F2F2F2;
+          }
+
+          /* ---------- Gold date block ---------- */
+          .up-card .up-date {
+            flex: 0 1 240px; min-height: 260px; padding: 32px 24px;
+            background: #C9A84C; color: #0A0A0A;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-align: center;
+          }
+          .up-card .up-date-top { font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; }
+          .up-card .up-date-day { font-family: 'Playfair Display', Georgia, serif; font-weight: 900; font-size: 88px; line-height: 1; }
+          .up-card .up-date-month { font-family: 'Space Mono', monospace; font-size: 15px; font-weight: 700; letter-spacing: 0.18em; }
+          .up-card .up-countdown {
+            margin-top: 16px; padding: 6px 14px; border-radius: 999px; background: #0A0A0A; color: #C9A84C;
+            font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+          }
+
+          /* ---------- Body ---------- */
+          .up-card .up-body { flex: 1 1 480px; min-width: 0; padding: 36px 40px; }
+          .up-card .up-chip {
+            display: inline-flex; align-items: center; gap: 10px; margin-bottom: 16px; padding: 5px 14px;
+            border: 1px solid #5A4A1E; border-radius: 999px;
+            font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #C9A84C;
+          }
+          .up-card .up-chip i { width: 8px; height: 8px; border-radius: 50%; background: #C9A84C; }
+          .up-card .up-title { margin: 0 0 8px; max-width: 760px; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.2; color: #FFFFFF; }
+          .up-card .up-sub { margin: 0; font-size: 16px; color: #B5B5B5; }
+
+          /* ---------- Progress steps ---------- */
+          .up-card .up-steps { display: flex; flex-wrap: wrap; gap: 24px 16px; margin: 32px 0 0; padding: 0; list-style: none; }
+          .up-card .up-step { flex: 1 1 150px; min-width: 0; }
+          .up-card .up-bar { height: 6px; margin-bottom: 14px; border-radius: 3px; }
+          .up-card .up-name-row { display: flex; align-items: center; gap: 10px; }
+          .up-card .up-name { font-size: 18px; font-weight: 700; color: #FFFFFF; }
+          .up-card .up-meta { margin: 4px 0 0 32px; font-family: 'Space Mono', monospace; font-size: 12px; color: #A0A0A0; }
+          .up-card .up-status { margin-left: 32px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+
+          /* Each phase has its own colour */
+          .up-card .up-step--explore   { --c: #14917F; --c-dim: #0E3A34; }
+          .up-card .up-step--fabricate { --c: #E0A100; --c-dim: #4A3705; }
+          .up-card .up-step--pitch     { --c: #E4572E; --c-dim: #4A2217; }
+
+          /* Done = solid colour bar + teal "Completed" */
+          .up-card .up-step--done .up-bar    { background: var(--c); }
+          .up-card .up-step--done .up-status { color: #4FD1BD; }
+          /* Next / upcoming = dim bar + orange "Coming up" */
+          .up-card .up-step--next .up-bar    { background: var(--c-dim); }
+          .up-card .up-step--next .up-status { color: #FF9B78; }
+
+          /* ---------- Actions ---------- */
+          .up-card .up-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #2A2A2A; }
+          .up-card .up-button {
+            display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px;
+            border: 1px solid #C9A84C; color: #C9A84C; text-decoration: none;
+            font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+          }
+          .up-card .up-button:hover { background: #C9A84C; color: #0A0A0A; }
+          .up-card .up-note { font-size: 15px; color: #A0A0A0; }
+
+
+    .view-all:hover { color: var(--gold); gap: 0.75rem; }
+
+
     /* ── Responsive ── */
     @media (max-width: 991px) {
       #filter-bar { top: 64px; padding: var(--space-sm) var(--space-md); }
@@ -584,6 +652,14 @@
       .event-list-card { grid-template-columns: 70px 1fr; gap: var(--space-md); padding: var(--space-md); }
       .past-grid { grid-template-columns: 1fr; }
     }
+
+     @media (max-width: 768px) {
+        .up-card .up-date { flex: 1 1 100%; min-height: 0; flex-direction: row; flex-wrap: wrap; gap: 8px 16px; padding: 20px 24px; }
+        .up-card .up-date-day { font-size: 56px; }
+        .up-card .up-countdown { margin-top: 0; }
+        .up-card .up-body { padding: 28px 24px; }
+      }
+
   </style>
 </head>
 
@@ -685,7 +761,7 @@
                  <p></p>
           </div>
         <!-- Featured Event -->
-
+        <!--
         <div class="event-featured" data-aos="fade-up" data-aos-delay="100" data-category="workshop">
           <div class="event-featured-date">
             <span class="day">14</span>
@@ -706,6 +782,73 @@
               </p>
               <p style="font-size: smaller; text-decoration: underline;">More details</p>
             </a>
+          </div>
+
+        </div>
+      -->
+
+         <!-- The "Upcoming" card is a special card that shows the next milestone in the current project.
+                      It is not a regular event, so it has a different design and layout. -->
+                  <div class="up-card">
+
+          <!-- Gold date block: the NEXT milestone -->
+          <div class="up-date">
+            <div class="up-date-top">NEXT UP &middot; PITCH</div>
+            <div class="up-date-day">27</div>
+            <div class="up-date-month">NOVEMBER</div>
+            <div class="up-countdown" id="up-countdown">10 days to go</div>
+          </div>
+
+          <div class="up-body">
+            <div class="up-chip"><i></i>In progress &middot; 2 of 3 phases done</div>
+
+            <h3 class="up-title">IoTeams Discovery 2026: Where Young Minds Meet Real Innovation</h3>
+            <p class="up-sub">Program STI 100³ 2026 &middot; KICT, IIUM &times; Tunku Kurshiah College</p>
+
+            <ol class="up-steps">
+
+              <!-- DONE step: class "up-step--done" + tick icon + "Completed" -->
+              <li class="up-step up-step--explore up-step--done">
+                <div class="up-bar"></div>
+                <div class="up-name-row">
+                  <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#14917F"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#0A0A0A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span class="up-name">Explore</span>
+                </div>
+                <div class="up-meta">15 Oct 2026</div>
+                <div class="up-status">Completed</div>
+              </li>
+
+              <li class="up-step up-step--fabricate up-step--done">
+                <div class="up-bar"></div>
+                <div class="up-name-row">
+                  <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E0A100"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#0A0A0A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span class="up-name">Fabricate</span>
+                </div>
+                <div class="up-meta">14 Nov 2026</div>
+                <div class="up-status">Completed</div>
+              </li>
+
+              <!-- NEXT step: class "up-step--next" + ring icon + "Coming up".
+                  When Pitch is finished: change "up-step--next" to "up-step--done",
+                  replace the ring icon with the tick icon (copy it from the step above, colour #E4572E),
+                  and change "Coming up" to "Completed". -->
+              <li class="up-step up-step--pitch up-step--next">
+                <div class="up-bar"></div>
+                <div class="up-name-row">
+                  <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#E4572E" stroke-width="3"/><circle cx="12" cy="12" r="4" fill="#E4572E"/></svg>
+                  <span class="up-name">Pitch</span>
+                </div>
+                <div class="up-meta">27 Nov 2026</div>
+                <div class="up-status">Coming up</div>
+              </li>
+
+            </ol>
+
+            <div class="up-actions">
+              <!-- Jumps to the "Latest update" section on the Events page -->
+              <a class="up-button" href="pages/upcoming-event-details.html#latest-update">See the latest update &rarr;</a>
+              <span class="up-note">Fabricate phase at TKC took place on 14 November 2026.</span>
+            </div>
           </div>
 
         </div>
