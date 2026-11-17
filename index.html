@@ -1070,8 +1070,73 @@
             </div>
           </div>
 
+                  <!-- The "Upcoming" card is a special card that shows the next milestone in the current project.
+                      It is not a regular event, so it has a different design and layout. -->
+                  <div class="up-card">
 
+          <!-- Gold date block: the NEXT milestone -->
+          <div class="up-date">
+            <div class="up-date-top">NEXT UP &middot; PITCH</div>
+            <div class="up-date-day">27</div>
+            <div class="up-date-month">NOVEMBER</div>
+            <div class="up-countdown" id="up-countdown">10 days to go</div>
+          </div>
+
+          <div class="up-body">
+            <div class="up-chip"><i></i>In progress &middot; 2 of 3 phases done</div>
+
+            <h3 class="up-title">IoTeams Discovery 2026: Where Young Minds Meet Real Innovation</h3>
+            <p class="up-sub">Program STI 100³ 2026 &middot; KICT, IIUM &times; Tunku Kurshiah College</p>
+
+            <ol class="up-steps">
+
+              <!-- DONE step: class "up-step--done" + tick icon + "Completed" -->
+              <li class="up-step up-step--explore up-step--done">
+                <div class="up-bar"></div>
+                <div class="up-name-row">
+                  <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#14917F"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#0A0A0A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span class="up-name">Explore</span>
+                </div>
+                <div class="up-meta">15 Oct 2026</div>
+                <div class="up-status">Completed</div>
+              </li>
+
+              <li class="up-step up-step--fabricate up-step--done">
+                <div class="up-bar"></div>
+                <div class="up-name-row">
+                  <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#E0A100"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#0A0A0A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span class="up-name">Fabricate</span>
+                </div>
+                <div class="up-meta">14 Nov 2026</div>
+                <div class="up-status">Completed</div>
+              </li>
+
+              <!-- NEXT step: class "up-step--next" + ring icon + "Coming up".
+                  When Pitch is finished: change "up-step--next" to "up-step--done",
+                  replace the ring icon with the tick icon (copy it from the step above, colour #E4572E),
+                  and change "Coming up" to "Completed". -->
+              <li class="up-step up-step--pitch up-step--next">
+                <div class="up-bar"></div>
+                <div class="up-name-row">
+                  <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#E4572E" stroke-width="3"/><circle cx="12" cy="12" r="4" fill="#E4572E"/></svg>
+                  <span class="up-name">Pitch</span>
+                </div>
+                <div class="up-meta">27 Nov 2026</div>
+                <div class="up-status">Coming up</div>
+              </li>
+
+            </ol>
+
+            <div class="up-actions">
+              <!-- Jumps to the "Latest update" section on the Events page -->
+              <a class="up-button" href="pages/events.html#latest-update">See the latest update &rarr;</a>
+              <span class="up-note">Fabricate phase at TKC took place on 14 November 2026.</span>
             </div>
+          </div>
+
+        </div>
+
+        </div>
           </div>
 
 
