@@ -781,6 +781,71 @@
       padding-bottom: 0.3rem;
     }
 
+    .up-card, .up-card *, .up-card *::before, .up-card *::after { box-sizing: border-box; }
+
+          .up-card {
+            display: flex; flex-wrap: wrap;
+            background: #141414; border: 1px solid #2A2A2A; border-radius: 16px; overflow: hidden;
+            font-family: 'DM Sans', system-ui, sans-serif; line-height: 1.6; color: #F2F2F2;
+          }
+
+          /* ---------- Gold date block ---------- */
+          .up-card .up-date {
+            flex: 0 1 240px; min-height: 260px; padding: 32px 24px;
+            background: #C9A84C; color: #0A0A0A;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-align: center;
+          }
+          .up-card .up-date-top { font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; }
+          .up-card .up-date-day { font-family: 'Playfair Display', Georgia, serif; font-weight: 900; font-size: 88px; line-height: 1; }
+          .up-card .up-date-month { font-family: 'Space Mono', monospace; font-size: 15px; font-weight: 700; letter-spacing: 0.18em; }
+          .up-card .up-countdown {
+            margin-top: 16px; padding: 6px 14px; border-radius: 999px; background: #0A0A0A; color: #C9A84C;
+            font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+          }
+
+          /* ---------- Body ---------- */
+          .up-card .up-body { flex: 1 1 480px; min-width: 0; padding: 36px 40px; }
+          .up-card .up-chip {
+            display: inline-flex; align-items: center; gap: 10px; margin-bottom: 16px; padding: 5px 14px;
+            border: 1px solid #5A4A1E; border-radius: 999px;
+            font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #C9A84C;
+          }
+          .up-card .up-chip i { width: 8px; height: 8px; border-radius: 50%; background: #C9A84C; }
+          .up-card .up-title { margin: 0 0 8px; max-width: 760px; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.2; color: #FFFFFF; }
+          .up-card .up-sub { margin: 0; font-size: 16px; color: #B5B5B5; }
+
+          /* ---------- Progress steps ---------- */
+          .up-card .up-steps { display: flex; flex-wrap: wrap; gap: 24px 16px; margin: 32px 0 0; padding: 0; list-style: none; }
+          .up-card .up-step { flex: 1 1 150px; min-width: 0; }
+          .up-card .up-bar { height: 6px; margin-bottom: 14px; border-radius: 3px; }
+          .up-card .up-name-row { display: flex; align-items: center; gap: 10px; }
+          .up-card .up-name { font-size: 18px; font-weight: 700; color: #FFFFFF; }
+          .up-card .up-meta { margin: 4px 0 0 32px; font-family: 'Space Mono', monospace; font-size: 12px; color: #A0A0A0; }
+          .up-card .up-status { margin-left: 32px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+
+          /* Each phase has its own colour */
+          .up-card .up-step--explore   { --c: #14917F; --c-dim: #0E3A34; }
+          .up-card .up-step--fabricate { --c: #E0A100; --c-dim: #4A3705; }
+          .up-card .up-step--pitch     { --c: #E4572E; --c-dim: #4A2217; }
+
+          /* Done = solid colour bar + teal "Completed" */
+          .up-card .up-step--done .up-bar    { background: var(--c); }
+          .up-card .up-step--done .up-status { color: #4FD1BD; }
+          /* Next / upcoming = dim bar + orange "Coming up" */
+          .up-card .up-step--next .up-bar    { background: var(--c-dim); }
+          .up-card .up-step--next .up-status { color: #FF9B78; }
+
+          /* ---------- Actions ---------- */
+          .up-card .up-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #2A2A2A; }
+          .up-card .up-button {
+            display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px;
+            border: 1px solid #C9A84C; color: #C9A84C; text-decoration: none;
+            font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+          }
+          .up-card .up-button:hover { background: #C9A84C; color: #0A0A0A; }
+          .up-card .up-note { font-size: 15px; color: #A0A0A0; }
+
+
     .view-all:hover { color: var(--gold); gap: 0.75rem; }
 
     /* ── Responsive ── */
