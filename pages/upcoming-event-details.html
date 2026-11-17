@@ -467,49 +467,77 @@
                 }
                 .iot-link:hover { color: var(--iot-gold-light); text-decoration: underline; }
 
-                  /* ---------- Latest update section ---------- */
-                .iot-update, .iot-update *, .iot-update *::before, .iot-update *::after { box-sizing: border-box; }
-                .iot-update {
-                    margin-top: 56px; padding: 72px 0 80px;
-                    background: var(--iot-bg-alt);
-                    border-top: 1px solid var(--iot-line); border-bottom: 1px solid var(--iot-line);
+              #latest-update, #latest-update *, #latest-update *::before, #latest-update *::after { box-sizing: border-box; }
+
+                #latest-update {
+                    margin-top: 56px; padding: 80px 0 88px;
+                    background: #111111;
+                    border-top: 1px solid #2A2A2A; border-bottom: 1px solid #2A2A2A;
                     scroll-margin-top: 90px;
+                    font-family: 'DM Sans', system-ui, sans-serif;
                 }
-                .iot-container { padding: 0 clamp(24px, 10vw, 206px); }
-                .iot-eyebrow { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-bottom: 20px; }
-                .iot-new { padding: 4px 12px; background: var(--iot-gold); color: #825605; font-family: var(--iot-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; }
-                .iot-eyebrow-text { font-family: var(--iot-mono); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--iot-gold); }
-                .iot-update h2 {
-                    margin: 0 0 48px; max-width: 900px;
-                    font-family: var(--iot-serif); font-weight: 700;
-                    font-size: clamp(34px, 4.6vw, 58px); line-height: 1.1; color: #FFFFFF;
+                #latest-update .lu-wrap { padding: 0 clamp(24px, 10vw, 206px); }
+
+                /* Eyebrow */
+                #latest-update .lu-eyebrow { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-bottom: 24px; }
+                #latest-update .lu-new { padding: 4px 12px; background: #C9A84C; color: #0A0A0A; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; }
+                #latest-update .lu-eyebrow-text { font-family: 'Space Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #C9A84C; }
+
+                /* Headline */
+                #latest-update .lu-title {
+                    margin: 0 0 40px; max-width: 820px;
+                    font-family: 'Playfair Display', Georgia, serif; font-weight: 700;
+                    font-size: clamp(32px, 4.2vw, 54px); line-height: 1.12; color: #FFFFFF;
+                    text-wrap: balance;
                 }
-                .iot-update h2 span { color: var(--iot-gold); }
-                .iot-update-grid { display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start; }
-                .iot-figure { flex: 1 1 460px; min-width: 0; margin: 0; }
-                .iot-figure img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 20px; border: 1px solid #3A3A3A; }
-                .iot-figure figcaption { margin-top: 12px; font-size: 14px; color: #A0A0A0; }
-                .iot-body { flex: 1 1 420px; min-width: 0; }
-                .iot-place { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; font-size: 15px; color: var(--iot-muted); }
-                .iot-body p { margin: 0 0 18px; font-size: 19px; color: #E6E6E6; }
-                .iot-body .iot-quote {
-                    margin: 14px 0 32px; padding-top: 24px; border-top: 3px solid var(--iot-gold);
-                    font-family: var(--iot-serif); font-style: italic; font-size: clamp(24px, 2.8vw, 34px);
-                    line-height: 1.25; color: #FFFFFF;
+                #latest-update .lu-title em { font-style: italic; color: #C9A84C; }
+
+                /* Key facts strip */
+                #latest-update .lu-facts {
+                    display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 24px 32px;
+                    margin: 0 0 56px; padding: 24px 0; list-style: none;
+                    border-top: 1px solid #2A2A2A; border-bottom: 1px solid #2A2A2A;
                 }
-                .iot-body .iot-thanks { margin-bottom: 12px; font-size: 17px; color: var(--iot-muted); }
-                .iot-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
-                .iot-chips span { padding: 6px 14px; border: 1px solid #3A3A3A; border-radius: 999px; font-family: var(--iot-mono); font-size: 13px; color: #D9D9D9; }
-                .iot-tags { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 32px; font-family: var(--iot-mono); font-size: 13px; color: #A0A0A0; }
-                .iot-button {
+                #latest-update .lu-label { margin-bottom: 4px; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #C9A84C; }
+                #latest-update .lu-value { font-size: 18px; font-weight: 600; color: #FFFFFF; }
+
+                /* Photo + text */
+                #latest-update .lu-grid { display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start; }
+                #latest-update .lu-figure { flex: 1 1 480px; min-width: 0; margin: 0; }
+                #latest-update .lu-frame { position: relative; padding: 0 16px 16px 0; }
+                #latest-update .lu-frame::before { content: ""; position: absolute; top: 16px; left: 16px; right: 0; bottom: 0; border: 2px solid #C9A84C; border-radius: 16px; }
+                #latest-update .lu-frame img { position: relative; display: block; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
+                #latest-update .lu-figure figcaption { margin-top: 16px; font-size: 14px; color: #A0A0A0; }
+
+                #latest-update .lu-body { flex: 1 1 440px; min-width: 0; }
+                #latest-update .lu-lead { margin: 0 0 20px; font-size: clamp(20px, 1.8vw, 24px); line-height: 1.55; color: #FFFFFF; }
+                #latest-update .lu-text { margin: 0 0 36px; max-width: 56ch; font-size: 18px; color: #B5B5B5; }
+
+                #latest-update .lu-quote { margin: 0 0 36px; }
+                #latest-update .lu-quote-mark { height: 44px; font-family: 'Playfair Display', Georgia, serif; font-size: 88px; line-height: 0.6; color: #C9A84C; }
+                #latest-update .lu-quote p { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: clamp(26px, 3vw, 38px); line-height: 1.2; color: #FFFFFF; }
+
+                #latest-update .lu-button {
                     display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px;
-                    border: 1px solid var(--iot-gold); color: var(--iot-gold); text-decoration: none;
-                    font-family: var(--iot-mono); font-size: 13px; font-weight: 700;
+                    border: 1px solid #C9A84C; color: #C9A84C; text-decoration: none;
+                    font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700;
                     letter-spacing: 0.1em; text-transform: uppercase;
                 }
-                .iot-button:hover { background: var(--iot-gold); color: #dfd3d3; }
+                #latest-update .lu-button:hover { background: #C9A84C; color: #0A0A0A; }
 
-                
+                /* Appreciation band */
+                #latest-update .lu-thanks { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 24px 48px; margin-top: 64px; padding-top: 32px; border-top: 1px solid #2A2A2A; }
+                #latest-update .lu-thanks-main { flex: 1 1 380px; max-width: 580px; }
+                #latest-update .lu-thanks-main p { margin: 0 0 16px; font-size: 16px; color: #B5B5B5; }
+                #latest-update .lu-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+                #latest-update .lu-chips span { padding: 6px 14px; border: 1px solid #3A3A3A; border-radius: 999px; font-family: 'Space Mono', monospace; font-size: 13px; color: #D9D9D9; }
+                #latest-update .lu-tags { flex: 0 1 360px; display: flex; flex-wrap: wrap; gap: 8px 16px; font-family: 'Space Mono', monospace; font-size: 13px; color: #A0A0A0; }
+
+                @media (max-width: 768px) {
+                    #latest-update { margin-top: 32px; padding: 56px 0 64px; }
+                    #latest-update .lu-grid { gap: 40px; }
+                    #latest-update .lu-thanks { margin-top: 48px; }
+                }
 
 
     </style>
@@ -664,48 +692,65 @@
                     </div>
                 </section>
 
-                      <!-- Latest update (14 Nov 2026 - Fabricate phase) -->
-                <section class="iot-update" id="latest-update">
-                    <div class="iot-container" data-aos="fade-up">
+                <section id="latest-update">
+  <div class="lu-wrap" data-aos="fade-up">
 
-                        <div class="iot-eyebrow">
-                            <span class="iot-new">NEW</span>
-                            <span class="iot-eyebrow-text">&#9670; Latest update &middot; Fabricate phase &middot; 14 November 2026</span>
-                        </div>
+    <div class="lu-eyebrow">
+      <span class="lu-new">NEW</span>
+      <span class="lu-eyebrow-text">&#9670; Latest update &middot; Fabricate phase</span>
+    </div>
 
-                        <h2>KICT empowering <span>future STEM innovators</span></h2>
+    <h2 class="lu-title">KICT empowering <em>future STEM innovators</em></h2>
 
-                        <div class="iot-update-grid">
+    <ul class="lu-facts">
+      <li><div class="lu-label">Date</div><div class="lu-value">14 November 2026</div></li>
+      <li><div class="lu-label">Place</div><div class="lu-value">Bandar Enstek</div></li>
+      <li><div class="lu-label">School</div><div class="lu-value">Tunku Kurshiah College</div></li>
+      <li><div class="lu-label">Programme</div><div class="lu-value">STI 100³</div></li>
+    </ul>
 
-                            <figure class="iot-figure">
-                                <!-- CHANGE THE src TO YOUR REAL PHOTO from the TKC session -->
-                                <img src="https://zxfinszfbnmatwamahyf.supabase.co/storage/v1/object/public/ioteams-media/gallery/TKC/Banner_TKC_Philosophy_Photo2_FullWidth_LogoFixed.jpg"
-                                     alt="Students and mentors at the STI 100³ Programme session at Tunku Kurshiah College"
-                                     width="1200" height="900" loading="lazy">
-                                <figcaption>STI 100³ Programme at Tunku Kurshiah College, Bandar Enstek, 14 November 2026.</figcaption>
-                            </figure>
+    <div class="lu-grid">
 
-                            <div class="iot-body">
-                                <div class="iot-place">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-                                    Bandar Enstek
-                                </div>
+      <figure class="lu-figure">
+        <div class="lu-frame">
+          <!-- Use the SAME src you already use for your real photo -->
+          <img src="../assets/images/your-photo.jpg"
+               alt="Students and mentors at the STI 100³ Programme session at Tunku Kurshiah College"
+               width="1200" height="900" loading="lazy">
+        </div>
+        <figcaption>STI 100³ Programme at Tunku Kurshiah College, Bandar Enstek, 14 November 2026.</figcaption>
+      </figure>
 
-                                <p>KICT, IIUM, through IoTeams, continues its commitment to empowering young innovators through the STI 100³ Programme at Tunku Kurshiah College (TKC).</p>
-                                <p>The programme provides hands-on STEM exposure, research experience and innovation opportunities to nurture future scientists, technologists and leaders.</p>
+      <div class="lu-body">
+        <p class="lu-lead">KICT, IIUM, through IoTeams, continues its commitment to empowering young innovators through the STI 100³ Programme at Tunku Kurshiah College (TKC).</p>
+        <p class="lu-text">The programme provides hands-on STEM exposure, research experience and innovation opportunities to nurture future scientists, technologists and leaders.</p>
 
-                                <p class="iot-quote">Today's learners, tomorrow's innovators.</p>
+        <div class="lu-quote">
+          <div class="lu-quote-mark" aria-hidden="true">&ldquo;</div>
+          <p>Today's learners, tomorrow's innovators.</p>
+        </div>
 
-                                <p class="iot-thanks">Our sincere appreciation to TKC, MOSTI, MBOT, KICT and IoTeams for making this meaningful initiative possible.</p>
-                                <div class="iot-chips">
-                                    <span>TKC</span><span>MOSTI</span><span>MBOT</span><span>KICT</span><span>IoTeams</span>
-                                </div>
+        <!-- Point this at your blog post page once it exists -->
+        <a class="lu-button" href="blog.html">Read the full post on the Blog &rarr;</a>
+      </div>
 
-                                <div class="iot-tags">
-                                    <span>#KICT</span><span>#IIUM</span><span>#IoTeams</span><span>#STI100Cube</span>
-                                    <span>#MOSTI</span><span>#MBOT</span><span>#TKC</span><span>#STEM</span>
-                                </div>
-                                </section>
+    </div>
+
+    <div class="lu-thanks">
+      <div class="lu-thanks-main">
+        <p>Our sincere appreciation to TKC, MOSTI, MBOT, KICT and IoTeams for making this meaningful initiative possible.</p>
+        <div class="lu-chips">
+          <span>TKC</span><span>MOSTI</span><span>MBOT</span><span>KICT</span><span>IoTeams</span>
+        </div>
+      </div>
+      <div class="lu-tags">
+        <span>#KICT</span><span>#IIUM</span><span>#IoTeams</span><span>#STI100Cube</span>
+        <span>#MOSTI</span><span>#MBOT</span><span>#TKC</span><span>#STEM</span>
+      </div>
+    </div>
+
+  </div>
+</section>
                 <!-- About -->
                 <section class="about" data-aos="fade-up" style="border-top: none; padding-top: 40px; padding-bottom: 0;" >
                         <br>
