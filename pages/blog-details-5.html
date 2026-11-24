@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  IoTeams IIUM — Blog Details: RTB Feature
+  pages/blog-rtb-feature.html
+  Same template, colours and shared sections as blog-details.html
+-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IoTeams Featured on Radio Television Brunei (RTB) at GIC 2026 — IoTeams Blog</title>
+  <meta name="description" content="IoTeams from KICT, IIUM was interviewed by Radio Television Brunei (RTB) at GIC 2026, Universiti Brunei Darussalam, to share our innovation for smarter and more sustainable food production.">
+
+  <meta property="og:title" content="IoTeams Featured on Radio Television Brunei (RTB) at GIC 2026">
+  <meta property="og:description" content="Our innovation for smarter and more sustainable food production, shared with a wider audience on RTB.">
+  <meta property="og:image" content="https://zxfinszfbnmatwamahyf.supabase.co/storage/v1/object/public/ioteams-media/blog/GIC_brunei.jpeg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="IoTeams IIUM">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@ioteams_iium">
+  <meta name="twitter:title" content="IoTeams Featured on Radio Television Brunei (RTB) at GIC 2026">
+  <meta name="twitter:description" content="Our innovation for smarter and more sustainable food production, shared with a wider audience on RTB.">
+  <meta name="twitter:image" content="https://zxfinszfbnmatwamahyf.supabase.co/storage/v1/object/public/ioteams-media/blog/GIC_brunei.jpeg">
+  <meta name="theme-color" content="#C9A84C">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="../assets/css/main.css">
+
+  <style>
+    /* POST HERO */
+    #post-hero { background: var(--black); padding: var(--space-3xl) var(--space-2xl) 0; }
+    .post-hero-inner { max-width: var(--container-max); margin: 0 auto; }
+    .post-hero-meta { display:flex; align-items:center; gap:var(--space-sm); margin-bottom:var(--space-md); flex-wrap:wrap; }
+    .post-hero-date, .post-hero-read { font-family:var(--font-mono); font-size:var(--fs-xs); color:var(--white-muted); letter-spacing:.08em; display:flex; align-items:center; gap:.3rem; }
+    .post-title { font-family:var(--font-heading); font-size:clamp(2rem,4vw,3.5rem); font-weight:900; line-height:1.1; color:var(--white); margin-bottom:var(--space-md); max-width:850px; }
+    .post-excerpt { font-size:var(--fs-lg); color:var(--white-dim); line-height:1.7; max-width:750px; margin-bottom:var(--space-xl); font-weight:300; }
+    .post-author-row { display:flex; align-items:center; justify-content:space-between; padding:var(--space-md) 0; border-top:1px solid var(--border-dark); border-bottom:1px solid var(--border-dark); margin-bottom:var(--space-xl); flex-wrap:wrap; gap:var(--space-md); }
+    .post-author { display:flex; align-items:center; gap:var(--space-sm); }
+    .author-avatar-lg { width:48px; height:48px; border-radius:50%; background:var(--black-4); border:2px solid var(--border-gold); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .author-avatar-lg i { color:var(--white-muted); font-size:1.2rem; }
+    .author-details h6 { font-size:var(--fs-sm); font-weight:700; color:var(--white); margin:0 0 .15rem; }
+    .author-details span { font-family:var(--font-mono); font-size:.65rem; color:var(--teal); letter-spacing:.08em; text-transform:uppercase; }
+    .featured-ribbon { position:absolute; top:1rem; right:1rem; background:var(--gold); color:var(--black); font-family:var(--font-mono); font-size:var(--fs-xs); font-weight:700; padding:.3rem .8rem; border-radius:var(--radius-sm); text-transform:uppercase; }
+    .post-cover { width:100%; max-width:420px; margin-left:auto; margin-right:auto; background:var(--black-3); border-radius:var(--radius-md); margin-bottom:var(--space-3xl); overflow:hidden; position:relative; border:1px solid var(--border-dark); }
+    .post-cover img { width:100%; height:auto; display:block; object-fit:contain; }
+
+    /* BODY LAYOUT */
+    #post-body { background:var(--black); padding:0 var(--space-2xl) var(--space-3xl); }
+    .post-layout { max-width:var(--container-max); margin:0 auto; display:grid; grid-template-columns:1fr 280px; gap:var(--space-xl); align-items:start; }
+    .post-content { font-size:var(--fs-md); color:var(--white-dim); line-height:1.8; min-width:0; }
+    .post-content h2 { font-family:var(--font-heading); font-size:clamp(1.4rem,2.5vw,2rem); font-weight:700; color:var(--white); margin-top:var(--space-xl); margin-bottom:var(--space-sm); padding-top:var(--space-md); border-top:1px solid var(--border-dark); }
+    .post-content p { margin-bottom:var(--space-md); color:var(--white-dim); }
+    .post-content p.lead { font-size:var(--fs-lg); color:var(--white); font-weight:300; line-height:1.75; }
+    .post-content blockquote { border-left:3px solid var(--gold); background:rgba(201,168,76,.05); margin:var(--space-lg) 0; padding:var(--space-md) var(--space-lg); border-radius:0 var(--radius-md) var(--radius-md) 0; }
+    .post-content blockquote p { font-family:var(--font-heading); font-style:italic; font-size:var(--fs-lg); color:var(--white); margin:0; line-height:1.6; }
+    .post-content ul { padding-left:var(--space-lg); margin-bottom:var(--space-md); }
+    .post-content li { margin-bottom:.5rem; line-height:1.7; }
+    .post-content ul li::marker { color:var(--gold); }
+
+    .info-box { background:rgba(26,188,176,.06); border:1px solid rgba(26,188,176,.25); border-radius:var(--radius-md); padding:var(--space-md) var(--space-lg); margin:var(--space-lg) 0; display:flex; gap:var(--space-sm); align-items:flex-start; }
+    .info-box i { color:var(--teal); font-size:1.1rem; flex-shrink:0; margin-top:2px; }
+    .info-box p { font-size:var(--fs-sm); color:var(--white-dim); margin:0; line-height:1.65; }
+
+    .quick-facts { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border-dark); border:1px solid var(--border-dark); border-radius:var(--radius-md); overflow:hidden; margin:var(--space-lg) 0; }
+    .quick-fact { background:var(--black-3); padding:var(--space-md); text-align:center; }
+    .quick-fact i { color:var(--gold); font-size:1.1rem; margin-bottom:.4rem; display:block; }
+    .quick-fact .qf-label { font-family:var(--font-mono); font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; color:var(--white-muted); display:block; margin-bottom:.3rem; }
+    .quick-fact .qf-value { font-size:var(--fs-sm); font-weight:700; color:var(--white); line-height:1.4; }
+
+    /* VIDEO EMBED */
+    .video-wrap { position:relative; width:100%; aspect-ratio:16/9; border:1px solid var(--border-gold); border-radius:var(--radius-md); overflow:hidden; background:var(--black-3); margin:var(--space-md) 0 var(--space-xs); }
+    .video-wrap iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+    .video-note { font-family:var(--font-mono); font-size:var(--fs-xs); color:var(--white-muted); letter-spacing:.06em; }
+    .video-note a { color:var(--teal); text-decoration:none; }
+
+    /* FOCUS CARDS */
+    .focus-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-sm); margin:var(--space-md) 0 var(--space-lg); }
+    .focus-card { background:var(--black-3); border:1px solid var(--border-dark); border-radius:var(--radius-md); padding:var(--space-md); }
+    .focus-card i { color:var(--gold); font-size:1.4rem; display:block; margin-bottom:.5rem; }
+    .focus-card h6 { color:var(--white); font-size:var(--fs-sm); font-weight:700; margin-bottom:.3rem; }
+    .focus-card p { font-size:var(--fs-sm); color:var(--white-dim); margin:0; line-height:1.6; }
+
+    .post-footer { margin-top:var(--space-xl); padding-top:var(--space-xl); border-top:1px solid var(--border-dark); }
+    .post-tags { display:flex; flex-wrap:wrap; gap:var(--space-xs); }
+
+    /* SIDEBAR */
+    .post-sidebar { position:sticky; top:calc(72px + var(--space-md)); display:flex; flex-direction:column; gap:var(--space-md); }
+    .sidebar-widget { background:var(--black-2); border:1px solid var(--border-dark); border-radius:var(--radius-md); padding:var(--space-md); }
+    .sidebar-widget h5 { font-family:var(--font-mono); font-size:var(--fs-xs); letter-spacing:.15em; color:var(--gold); text-transform:uppercase; margin-bottom:var(--space-md); padding-bottom:var(--space-xs); border-bottom:1px solid var(--border-dark); }
+    .toc-list { display:flex; flex-direction:column; gap:.4rem; }
+    .toc-item { font-size:var(--fs-sm); color:var(--white-dim); text-decoration:none; padding:.3rem var(--space-xs); border-radius:var(--radius-sm); border-left:2px solid transparent; transition:all var(--transition-base); display:block; line-height:1.4; }
+    .toc-item:hover, .toc-item.active { color:var(--gold); border-left-color:var(--gold); background:rgba(201,168,76,.05); padding-left:var(--space-sm); }
+    .reading-progress { position:fixed; top:0; left:0; width:0%; height:3px; background:var(--gold); z-index:9999; transition:width .1s linear; }
+    .tags-cloud { display:flex; flex-wrap:wrap; gap:.4rem; }
+    .tag-link { font-family:var(--font-mono); font-size:.65rem; letter-spacing:.08em; color:var(--white-dim); border:1px solid var(--border-dark); padding:.25rem .6rem; border-radius:var(--radius-sm); text-decoration:none; transition:all var(--transition-base); text-transform:uppercase; }
+    .tag-link:hover { border-color:var(--gold); color:var(--gold); }
+
+    .hero-btns { display:flex; flex-wrap:wrap; gap:var(--space-sm); margin-bottom:var(--space-xl); }
+    .btn-gold { background:var(--gold); color:#2b2200; font-weight:600; padding:.8rem 1.4rem; border-radius:8px; text-decoration:none; }
+    .btn-outline { border:1px solid var(--gold); color:var(--gold); padding:.8rem 1.4rem; border-radius:8px; text-decoration:none; }
+
+    /* RESPONSIVE */
+    @media (max-width:991px) {
+      .post-layout { grid-template-columns:1fr !important; }
+      .post-sidebar { position:static !important; margin-top:var(--space-2xl); }
+    }
+    @media (max-width:576px) {
+      #post-hero, #post-body { padding-left:.8rem !important; padding-right:.8rem !important; }
+      .post-title { font-size:1.6rem !important; }
+      .quick-facts { grid-template-columns:1fr 1fr !important; }
+      .focus-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+
+<body class="blog-details-page">
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="https://zxfinszfbnmatwamahyf.supabase.co/storage/v1/object/public/ioteams-media/icons/IoTeams_Logo_transparent.png" alt="IoTeams KICT Logo" style="height:48px; width:auto; object-fit:contain; background:transparent;">
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="programmes.html">Projects</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip">
+    <div class="marquee-inner">
+      <span>IoTeams Blog</span><span class="dot">◆</span>
+      <span>Featured on RTB</span><span class="dot">◆</span>
+      <span>GIC 2026 Brunei</span><span class="dot">◆</span>
+      <span>Food Technology</span><span class="dot">◆</span>
+      <span>3 Min Read</span><span class="dot">◆</span>
+      <span>IoTeams Blog</span><span class="dot">◆</span>
+      <span>Featured on RTB</span><span class="dot">◆</span>
+      <span>GIC 2026 Brunei</span><span class="dot">◆</span>
+      <span>Food Technology</span><span class="dot">◆</span>
+      <span>3 Min Read</span><span class="dot">◆</span>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- POST HERO -->
+    <section id="post-hero">
+      <div class="post-hero-inner">
+
+        <div class="post-hero-meta" data-aos="fade-up">
+          <a href="blog.html" style="font-family:var(--font-mono); font-size:var(--fs-xs); color:var(--teal); text-decoration:none; display:flex; align-items:center; gap:.3rem; letter-spacing:.06em;">
+            <i class="bi bi-arrow-left"></i> Back to Blog
+          </a>
+          <span style="color:var(--border-dark);">|</span>
+          <span class="badge badge-teal">IN THE NEWS</span>
+          <span class="badge badge-gold">GIC 2026</span>
+          <span class="post-hero-date"><i class="bi bi-calendar3"></i> November 2026</span>
+          <span class="post-hero-read"><i class="bi bi-clock"></i> 3 min read</span>
+        </div>
+
+        <h1 class="post-title" data-aos="fade-up" data-aos-delay="50">
+          IoTeams Featured on Brunei Television at GIC 2026
+        </h1>
+
+        <p class="post-excerpt" data-aos="fade-up" data-aos-delay="100">
+          Our innovation for smarter, more sustainable food production was showcased to a national audience by Radio Television Brunei (RTB).
+        </p>
+
+        <div class="hero-btns" data-aos="fade-up" data-aos-delay="120">
+          <a class="btn-gold" href="https://youtu.be/LsDxJbBFbos?t=312" target="_blank" rel="noopener noreferrer">▶ Watch the RTB Interview</a>
+          <a class="btn-outline" href="#story">Read the story</a>
+        </div>
+
+        <div class="post-author-row" data-aos="fade-up" data-aos-delay="150">
+          <div class="post-author">
+            <div class="author-avatar-lg"><i class="bi bi-person-fill"></i></div>
+            <div class="author-details">
+              <h6>Muhammad Nabil Zihni Bin Omar Shukri</h6>
+              <span>Club member · IoTeams IIUM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cover Image: replace with a photo of the RTB interview when available -->
+        <div class="post-cover" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://zxfinszfbnmatwamahyf.supabase.co/storage/v1/object/public/ioteams-media/blog/GIC_brunei.jpeg"
+               alt="IoTeams at GIC 2026, Universiti Brunei Darussalam" loading="lazy">
+          <span class="featured-ribbon">📺 Featured on RTB</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- POST BODY -->
+    <section id="post-body">
+      <div class="post-layout">
+
+        <article class="post-content" data-aos="fade-up">
+
+          <p class="lead">
+            Our innovation for smarter, more sustainable food production was showcased to a national audience by Radio Television Brunei (RTB).
+          </p>
+
+          <h2 id="story">A Meaningful Milestone</h2>
+          <p>
+            Alhamdulillah, IoTeams, representing the Kulliyyah of Information and Communication Technology (KICT), International Islamic University Malaysia (IIUM), took part in the Global Innovation Challenge (GIC) 2026 at Universiti Brunei Darussalam (UBD), where our team presented its work on smarter and more sustainable food production.
+          </p>
+          <p>
+            During the event, Radio Television Brunei (RTB) invited us for an interview, giving us the chance to share our research and innovation with a much wider audience across Brunei and the region.
+          </p>
+
+          <blockquote>
+            <p>“Technology should serve people, the community and the planet.” — IoTeams</p>
+          </blockquote>
+
+          <h2 id="at-a-glance">At a Glance</h2>
+          <div class="quick-facts">
+            <div class="quick-fact"><i class="bi bi-globe2"></i><span class="qf-label">Event</span><span class="qf-value">GIC 2026</span></div>
+            <div class="quick-fact"><i class="bi bi-buildings"></i><span class="qf-label">Venue</span><span class="qf-value">Universiti Brunei Darussalam (UBD)</span></div>
+            <div class="quick-fact"><i class="bi bi-tv"></i><span class="qf-label">Media</span><span class="qf-value">Radio Television Brunei (RTB)</span></div>
+            <div class="quick-fact"><i class="bi bi-people"></i><span class="qf-label">Team</span><span class="qf-value">IoTeams · KICT, IIUM</span></div>
+          </div>
+
+          <h2 id="watch-interview">Watch the Interview</h2>
+          <p>Our RTB interview begins around the 5:12 mark.</p>
+          <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/LsDxJbBFbos?start=312"
+                    title="IoTeams RTB interview at GIC 2026" loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+          <p class="video-note">Video not loading? <a href="https://youtu.be/LsDxJbBFbos?t=312" target="_blank" rel="noopener noreferrer">Watch on YouTube</a></p>
+
+          <h2 id="our-focus">Our Focus</h2>
+          <div class="focus-grid">
+            <div class="focus-card"><i class="bi bi-cpu"></i><h6>Smart Farming</h6><p>IoT-enabled monitoring to help growers make better decisions.</p></div>
+            <div class="focus-card"><i class="bi bi-tree"></i><h6>Sustainability</h6><p>Using resources more wisely across the food production cycle.</p></div>
+            <div class="focus-card"><i class="bi bi-bank"></i><h6>Digital Heritage</h6><p>Connecting innovation with community knowledge and legacy.</p></div>
+          </div>
+
+          <h2 id="acknowledgments">Our Thanks</h2>
+          <p>
+            We sincerely thank RTB for the opportunity, the GIC 2026 organisers and UBD for their warm hospitality, and KICT, IIUM for their continued support of our journey.
+          </p>
+
+          <div class="post-footer">
+            <div class="post-tags">
+              <a href="#" class="tag-link">#GIC2026</a>
+              <a href="#" class="tag-link">#IoTeams</a>
+              <a href="#" class="tag-link">#IoTeamsLegacy</a>
+              <a href="#" class="tag-link">#KICT</a>
+              <a href="#" class="tag-link">#IIUM</a>
+              <a href="#" class="tag-link">#UBD</a>
+              <a href="#" class="tag-link">#RTB</a>
+              <a href="#" class="tag-link">#Innovation</a>
+              <a href="#" class="tag-link">#FoodTechnology</a>
+              <a href="#" class="tag-link">#DigitalHeritage</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="post-sidebar">
+          <div class="sidebar-widget">
+            <h5>Table of Contents</h5>
+            <div class="toc-list" id="toc">
+              <a href="#story" class="toc-item active">A Meaningful Milestone</a>
+              <a href="#at-a-glance" class="toc-item">At a Glance</a>
+              <a href="#watch-interview" class="toc-item">Watch the Interview</a>
+              <a href="#our-focus" class="toc-item">Our Focus</a>
+              <a href="#acknowledgments" class="toc-item">Our Thanks</a>
+            </div>
+          </div>
+
+          <div class="sidebar-widget">
+            <h5>Share This Post</h5>
+            <div style="display:flex; flex-direction:column; gap:var(--space-xs);">
+              <a href="#" style="display:flex; align-items:center; gap:var(--space-xs); padding:.5rem var(--space-xs); border-radius:var(--radius-sm); text-decoration:none; font-size:var(--fs-sm); color:var(--white-dim);" onmouseover="this.style.background='var(--black-4)'" onmouseout="this.style.background='transparent'"><i class="bi bi-twitter-x"></i> Share on X</a>
+              <a href="#" style="display:flex; align-items:center; gap:var(--space-xs); padding:.5rem var(--space-xs); border-radius:var(--radius-sm); text-decoration:none; font-size:var(--fs-sm); color:var(--white-dim);" onmouseover="this.style.background='var(--black-4)'" onmouseout="this.style.background='transparent'"><i class="bi bi-linkedin"></i> Share on LinkedIn</a>
+              <button onclick="navigator.clipboard.writeText(location.href); this.textContent='✓ Copied!'; setTimeout(()=>this.textContent='Copy Link',2000)"
+                style="display:flex; align-items:center; gap:var(--space-xs); padding:.5rem var(--space-xs); border-radius:var(--radius-sm); font-size:var(--fs-sm); color:var(--white-dim); background:transparent; border:none; cursor:pointer; width:100%; text-align:left; font-family:var(--font-body);"
+                onmouseover="this.style.background='var(--black-4)'" onmouseout="this.style.background='transparent'">
+                <i class="bi bi-link-45deg"></i> Copy Link
+              </button>
+            </div>
+          </div>
+
+          <div class="sidebar-widget">
+            <h5>Tags</h5>
+            <div class="tags-cloud">
+              <a href="#" class="tag-link">GIC 2026</a>
+              <a href="#" class="tag-link">Brunei</a>
+              <a href="#" class="tag-link">RTB</a>
+              <a href="#" class="tag-link">UBD</a>
+              <a href="#" class="tag-link">KICT</a>
+              <a href="#" class="tag-link">IIUM</a>
+            </div>
+          </div>
+
+          <div class="sidebar-widget" style="background:var(--black-3); border-color:var(--border-gold-md); text-align:center;">
+            <span style="font-size:2rem; display:block; margin-bottom:var(--space-xs);">📺</span>
+            <h5 style="text-align:center; border:none; padding:0; margin-bottom:var(--space-xs);">Join the Next Squad</h5>
+            <p style="font-size:var(--fs-xs); color:var(--white-dim); margin-bottom:var(--space-md); line-height:1.6;">
+              Join IoTeams and get the chance to represent KICT at the next international innovation stage.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="footer-logo">
+          <img src="https://zxfinszfbnmatwamahyf.supabase.co/storage/v1/object/public/ioteams-media/icons/IoTeams_Logo_transparent.png" alt="IoTeams KICT Logo" style="height:72px; width:auto; object-fit:contain; background:transparent;">
+        </a>
+        <p class="footer-tagline">Building the Future of IoT Together.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/ioteams.kict?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61565885109209" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.tiktok.com/@ioteamskict?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" aria-label="Tiktok"><i class="bi bi-tiktok"></i></a>
+          <a href="http://www.youtube.com/@IoTeamsKICT" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h6>Pages</h6>
+        <ul class="footer-nav">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="programmes.html">Projects</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h6>Got questions? We don't bite.</h6>
+        <p>Reach out anytime — whether you want to join, collaborate, or just say hello. We reply within 48 hours.</p>
+        <ul class="footer-contact-list">
+          <li><i class="bi bi-geo-alt"></i><span>Kulliyyah of ICT (KICT), IIUM Gombak, Kuala Lumpur</span></li>
+          <li><i class="bi bi-envelope"></i><a href="mailto:ioteamskict@gmail.com">ioteamskict@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 IoTeams IIUM. All rights reserved.</p>
+      <p style="font-family:var(--font-mono); font-size:var(--fs-xs); color:var(--white-muted);">IIUM Gombak · Kuala Lumpur · Malaysia</p>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" aria-label="Scroll to top"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader">
+    <div class="preloader-inner">
+      <span class="bracket">[</span><span class="preloader-dot"></span><span class="preloader-dot"></span><span class="preloader-dot"></span><span class="bracket">]</span>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+  <script>
+    /* Reading progress bar */
+    window.addEventListener('scroll', () => {
+      const article = document.querySelector('.post-content');
+      if (!article) return;
+      const scrolled = window.scrollY - article.offsetTop;
+      const progress = Math.min(Math.max(scrolled / article.offsetHeight * 100, 0), 100);
+      document.getElementById('readingProgress').style.width = progress + '%';
+    });
+
+    /* TOC active highlight */
+    const headings = document.querySelectorAll('.post-content h2');
+    const tocLinks = document.querySelectorAll('.toc-item');
+    const tocObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.toc-item[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    headings.forEach(h => { if (h.id) tocObserver.observe(h); });
+  </script>
+</body>
+</html>
