@@ -705,6 +705,27 @@
     @media (max-width: 576px) {
       .blog-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── youtube ── */
+        .featured-yt-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 12px 0 16px;
+      padding: 8px 16px;
+      background: #ff0000;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .featured-yt-link:hover {
+      opacity: 0.85;
+      color: #fff;
+    }
+
   </style>
 </head>
 
@@ -780,25 +801,13 @@
         </div>
 
         <div class="featured-card" data-aos="fade-up" data-aos-delay="100">
-          <!--<div class="featured-img">
+          <div class="featured-img">
             <img src=" https://zxfinszfbnmatwamahyf.supabase.co/storage/v1/object/public/ioteams-media/blog/GIC_brunei.jpeg" 
                  alt="GIC Brunei 2026 blog post "
                  loading="lazy"
                  style="width:100%; height:100%; object-fit:cover;">
             <span class="featured-ribbon">⭐ Featured</span>
-          </div> -->
-          <div class="featured-img">
-          <iframe
-            src="https://www.youtube.com/embed/VIDEO_ID"
-            title="IoTeams Featured on Brunei Television at GIC 2026"
-            style="width:100%; height:100%; border:0;"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-          <span class="featured-ribbon">⭐ Featured</span>
-        </div>
-
+          </div> 
           <div class="featured-body">
             <div class="featured-meta">
               <span class="badge badge-gold">IN THE NEWS</span>
@@ -811,6 +820,9 @@
             <p>
               IoTeams was featured on Brunei Television at the Global Innovation Challenge 2026.
             </p>
+            <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" rel="noopener" class="featured-yt-link">
+              <i class="bi bi-youtube"></i> Watch on YouTube
+            </a>
             <div class="featured-author">
               <div class="author-avatar">
                 <i class="bi bi-person-fill"></i>
